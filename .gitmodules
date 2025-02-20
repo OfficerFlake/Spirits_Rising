@@ -1,0 +1,6 @@
+[submodule "Assets/Public"]
+	path = Assets/Public
+	url = https://github.com/OfficerFlake/Spirits_Rising_Public
+[submodule "Assets/Private"]
+	path = Assets/Private
+	url = https://github.com/OfficerFlake/Spirits_Rising_Private
