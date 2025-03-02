@@ -6,8 +6,8 @@ REM Color Definitions (Valid Hexadecimal Codes)
 REM ===========================================
 set COLOR_INFO=0F
 set COLOR_ENTER=0E
-set COLOR_LEAVE=0A
-set COLOR_SUCCESS=0B
+set COLOR_LEAVE=0B
+set COLOR_SUCCESS=0A
 set COLOR_RESET=07
 set COLOR_PROMPT=7D
 set COLOR_FAIL=0C
@@ -83,6 +83,7 @@ if %ERRORLEVEL% neq 0 (
 )
 color %COLOR_LEAVE%
 echo 02 > "X:/Spirits Rising/.gitupdate/.iterator"
+color %COLOR_SUCCESS%
 echo.
 echo ====================================
 echo Step 01 complete, ready for Step 02.
@@ -102,6 +103,7 @@ if %ERRORLEVEL% neq 0 (
 )
 color %COLOR_LEAVE%
 echo 03 > "X:/Spirits Rising/.gitupdate/.iterator"
+color %COLOR_SUCCESS%
 echo.
 echo ====================================
 echo Step 02 complete, ready for Step 03.
@@ -121,6 +123,7 @@ if %ERRORLEVEL% neq 0 (
 )
 color %COLOR_LEAVE%
 echo 04 > "X:/Spirits Rising/.gitupdate/.iterator"
+color %COLOR_SUCCESS%
 echo.
 echo ====================================
 echo Step 03 complete, ready for Step 04.
@@ -140,6 +143,7 @@ if %ERRORLEVEL% neq 0 (
 )
 color %COLOR_LEAVE%
 echo 05 > "X:/Spirits Rising/.gitupdate/.iterator"
+color %COLOR_SUCCESS%
 echo.
 echo ====================================
 echo Step 04 complete, ready for Step 05.
@@ -159,6 +163,7 @@ if %ERRORLEVEL% neq 0 (
 )
 color %COLOR_LEAVE%
 echo 06 > "X:/Spirits Rising/.gitupdate/.iterator"
+color %COLOR_SUCCESS%
 echo.
 echo ====================================
 echo Step 05 complete, ready for Step 06.
@@ -196,6 +201,7 @@ if %ERRORLEVEL% neq 0 (
 )
 color %COLOR_LEAVE%
 echo 07 > "X:/Spirits Rising/.gitupdate/.iterator"
+color %COLOR_SUCCESS%
 echo.
 echo ====================================
 echo Step 06 complete, ready for Step 07.
@@ -215,6 +221,7 @@ if %ERRORLEVEL% neq 0 (
 )
 color %COLOR_LEAVE%
 echo 08 > "X:/Spirits Rising/.gitupdate/.iterator"
+color %COLOR_SUCCESS%
 echo.
 echo ====================================
 echo Step 07 complete, ready for Step 08.
@@ -234,6 +241,7 @@ if %ERRORLEVEL% neq 0 (
 )
 color %COLOR_LEAVE%
 echo 09 > "X:/Spirits Rising/.gitupdate/.iterator"
+color %COLOR_SUCCESS%
 echo.
 echo ====================================
 echo Step 08 complete, ready for Step 09.
@@ -251,8 +259,9 @@ if %ERRORLEVEL% neq 0 (
     pause
     exit /B 1
 )
-color %COLOR_SUCCESS%
+color %COLOR_LEAVE%
 echo 10 > "X:/Spirits Rising/.gitupdate/.iterator"
+color %COLOR_SUCCESS%
 echo.
 echo ====================================
 echo Step 09 complete, ready for Step 10.
@@ -270,8 +279,9 @@ if %ERRORLEVEL% neq 0 (
     pause
     exit /B 1
 )
-color %COLOR_SUCCESS%
+color %COLOR_LEAVE%
 echo 11 > "X:/Spirits Rising/.gitupdate/.iterator"
+color %COLOR_SUCCESS%
 echo.
 echo ====================================
 echo Step 10 complete, ready for Step 11.
@@ -289,8 +299,9 @@ if %ERRORLEVEL% neq 0 (
     pause
     exit /B 1
 )
-color %COLOR_SUCCESS%
+color %COLOR_LEAVE%
 echo 12 > "X:/Spirits Rising/.gitupdate/.iterator"
+color %COLOR_SUCCESS%
 echo.
 echo ====================================
 echo Step 11 complete, ready for Step 12.
@@ -308,8 +319,9 @@ if %ERRORLEVEL% neq 0 (
     pause
     exit /B 1
 )
-color %COLOR_SUCCESS%
+color %COLOR_LEAVE%
 echo 13 > "X:/Spirits Rising/.gitupdate/.iterator"
+color %COLOR_SUCCESS%
 echo.
 echo ====================================
 echo Step 12 complete, ready for Step 13.
@@ -327,8 +339,9 @@ if %ERRORLEVEL% neq 0 (
     pause
     exit /B 1
 )
-color %COLOR_SUCCESS%
+color %COLOR_LEAVE%
 echo 14 > "X:/Spirits Rising/.gitupdate/.iterator"
+color %COLOR_SUCCESS%
 echo.
 echo ====================================
 echo Step 13 complete, ready for Step 14.
@@ -346,16 +359,18 @@ if %ERRORLEVEL% neq 0 (
     pause
     exit /B 1
 )
-color %COLOR_SUCCESS%
+color %COLOR_LEAVE%
 echo 01 > "X:/Spirits Rising/.gitupdate/.iterator"
+color %COLOR_SUCCESS%
 echo.
-echo ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-echo -------------------------------------
+echo.
+echo.
 echo =====================================
 echo Step 14 complete   WORKFLOW COMPLETE!
 echo =====================================
-echo -------------------------------------
-echo ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+echo.
+echo.
+echo.
 goto End
 
 :End

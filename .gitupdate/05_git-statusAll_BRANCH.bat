@@ -1,11 +1,13 @@
 @echo off
 cd /d "X:/Spirits Rising/"
 
+REM ===========================================
 REM Color Definitions (Valid Hexadecimal Codes)
+REM ===========================================
 set COLOR_INFO=0F
 set COLOR_ENTER=0E
-set COLOR_LEAVE=0A
-set COLOR_SUCCESS=0B
+set COLOR_LEAVE=0B
+set COLOR_SUCCESS=0A
 set COLOR_RESET=07
 set COLOR_PROMPT=7D
 set COLOR_FAIL=0C
@@ -67,6 +69,6 @@ color %COLOR_SUCCESS%
 echo Status check complete.
 echo.
 echo 06 > "X:/Spirits Rising/.gitupdate/.iteratorCheck"
-pause
+
 color %COLOR_RESET%
 exit /B
