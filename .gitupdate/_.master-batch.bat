@@ -349,9 +349,13 @@ if %ERRORLEVEL% neq 0 (
 color %COLOR_SUCCESS%
 echo 01 > "X:/Spirits Rising/.gitupdate/.iterator"
 echo.
-echo ====================================
-echo Step 14 complete. Workflow complete.
-echo ====================================
+echo ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+echo -------------------------------------
+echo =====================================
+echo Step 14 complete   WORKFLOW COMPLETE!
+echo =====================================
+echo -------------------------------------
+echo ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 goto End
 
 :End
