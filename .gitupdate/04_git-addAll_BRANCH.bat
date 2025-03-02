@@ -1,16 +1,16 @@
 @echo off
 cd /d "X:/Spirits Rising/"
 
+REM ===========================================
 REM Color Definitions (Valid Hexadecimal Codes)
+REM ===========================================
 set COLOR_INFO=0F
 set COLOR_ENTER=0E
-set COLOR_LEAVE=0A
-set COLOR_SUCCESS=0B
+set COLOR_LEAVE=0B
+set COLOR_SUCCESS=0A
 set COLOR_RESET=07
 set COLOR_PROMPT=7D
 set COLOR_FAIL=0C
-
-
 
 echo Adding files and folders to %BRANCH_NAME%
 echo.
@@ -66,6 +66,6 @@ color %COLOR_SUCCESS%
 echo Add complete.
 echo.
 echo 05 > "X:/Spirits Rising/.gitupdate/.iteratorCheck"
-pause
+
 color %COLOR_RESET%
 exit /B
