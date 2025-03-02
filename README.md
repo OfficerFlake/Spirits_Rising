@@ -8,5 +8,7 @@ README.md should exist at the top level of the git repo's only - for an further 
 
 # Shortcut to Repo's
 [Spirits Rising](https://github.com/OfficerFlake/Spirits_Rising)
+
 [Spirits Rising - Public](https://github.com/OfficerFlake/Spirits_Rising_Public)
+
 [Spirits Rising - Private](https://github.com/OfficerFlake/Spirits_Rising_Private)
