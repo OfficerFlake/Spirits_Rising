@@ -150,6 +150,6 @@ color %COLOR_SUCCESS%
 echo Push complete for all modules.
 echo.
 echo 07 > "X:/Spirits Rising/.gitupdate/.iteratorcheck"
-
+pause
 color %COLOR_RESET%
 exit /B
