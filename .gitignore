@@ -1,0 +1,28 @@
+# Don't ignore .gitmodules (important for submodule tracking)
+!.gitmodules
+
+# Don't ignore the .gitupdate folder itself
+!.gitupdate/
+
+# But especially include gitignore and README.md
+!/.gitignore
+!README.md
+
+# Ignore hidden files inside .gitupdate (files starting with a dot)
+.gitupdate/.*
+
+# Track all batch files inside .gitupdate
+!.gitupdate/*.bat
+
+# Ignore Visual Studio configuration files (local-specific)
+.vsconfig
+.vs/
+
+# Ignore specific Unity and project files (local environment specific)
+.idea/
+*.sln
+*.csproj
+Library/
+Logs/
+Packages/
+UserSettings/
