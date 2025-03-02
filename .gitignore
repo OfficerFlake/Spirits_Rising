@@ -8,10 +8,10 @@
 !/.gitignore
 !README.md
 
-# Ignore hidden files inside .gitupdate (files starting with a dot)
-.gitupdate/.*
+# Ignore all files inside .gitupdate (files starting with a dot)
+.gitupdate/*
 
-# Track all batch files inside .gitupdate
+# Unignore all batch files inside .gitupdate
 !.gitupdate/*.bat
 
 # Ignore Visual Studio configuration files (local-specific)
@@ -26,3 +26,8 @@ Library/
 Logs/
 Packages/
 UserSettings/
+
+# Ignore anything we specifically flag as wanting to exclude!
+# Useful for things like local testing.
+*.IGNORE.*
+
