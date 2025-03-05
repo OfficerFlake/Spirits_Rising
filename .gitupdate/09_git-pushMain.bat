@@ -12,26 +12,14 @@ set COLOR_RESET=07
 set COLOR_PROMPT=7D
 set COLOR_FAIL=0C
 
-REM Load the branch name from the .workingBranch file
-set /p BRANCH_NAME=<"X:/Spirits Rising/.gitupdate/.workingBranch"
-
-REM Validate branch name
-if "%BRANCH_NAME%"=="" (
-    echo No branch name found in .workingBranch file.
-    color %COLOR_FAIL%
-    pause
-    color %COLOR_RESET%
-    exit /b 1
-)
-
-echo Merging branch "%BRANCH_NAME%" into main...
+echo Pushing main...
 echo.
 
 REM Public Repo
 color %COLOR_ENTER%
 echo Switching to main in Assets/Public...
 cd /d "X:/Spirits Rising/Assets/Public"
-git merge %BRANCH_NAME%
+git push origin main
 if %ERRORLEVEL% neq 0 (
     color %COLOR_FAIL%
     echo Error merging "%BRANCH_NAME%" in Assets/Public.
@@ -48,7 +36,7 @@ REM Private Repo
 color %COLOR_ENTER%
 echo Switching to main in Assets/Private...
 cd /d "X:/Spirits Rising/Assets/Private"
-git merge %BRANCH_NAME%
+git push origin main
 if %ERRORLEVEL% neq 0 (
     color %COLOR_FAIL%
     echo Error merging "%BRANCH_NAME%" in Assets/Private.
@@ -66,7 +54,7 @@ color %COLOR_ENTER%
 echo Switching to main in Main Repo...
 cd /d "X:/Spirits Rising"
 echo Merging "%BRANCH_NAME%" into main...
-git merge %BRANCH_NAME%
+git push origin main
 if %ERRORLEVEL% neq 0 (
     color %COLOR_FAIL%
     echo Error merging "%BRANCH_NAME%" into main in Main Repo.
@@ -79,7 +67,7 @@ echo Merge complete for Main Repo.
 echo.
 
 color %COLOR_SUCCESS%
-echo Merge process completed successfully for all repositories.
+echo Push process completed successfully for all repositories.
 echo.
 echo 10 > "X:/Spirits Rising/.gitupdate/.iteratorcheck"
 

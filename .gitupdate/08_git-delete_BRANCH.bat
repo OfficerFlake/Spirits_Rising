@@ -21,66 +21,84 @@ if "%BRANCH_NAME%"=="" (
     color %COLOR_FAIL%
     pause
     color %COLOR_RESET%
-    exit /b 1
 )
 
-echo Pulling latest changes for branch "%BRANCH_NAME%"...
+echo Deleting branch "%BRANCH_NAME%"...
 echo.
 
 REM Public Repo
 color %COLOR_ENTER%
-echo Pulling from Assets/Public...
+echo Deleting branch in Assets/Public...
 cd /d "X:/Spirits Rising/Assets/Public"
-git pull origin %BRANCH_NAME%
+git branch -d %BRANCH_NAME%
 if %ERRORLEVEL% neq 0 (
     color %COLOR_FAIL%
-    echo Error pulling from Assets/Public.
+    echo Error deleting local branch "%BRANCH_NAME%" in Assets/Public.
     pause
     color %COLOR_RESET%
-    exit /b 1
+)
+git push origin --delete %BRANCH_NAME%
+if %ERRORLEVEL% neq 0 (
+    color %COLOR_FAIL%
+    echo Error deleting remote branch "%BRANCH_NAME%" in Assets/Public.
+    pause
+    color %COLOR_RESET%
 )
 cd /d "X:/Spirits Rising"
 color %COLOR_LEAVE%
-echo Leaving Assets/Public...
+echo Deleted branch in Assets/Public.
 echo.
 
 REM Private Repo
 color %COLOR_ENTER%
-echo Pulling from Assets/Private...
+echo Deleting branch in Assets/Private...
 cd /d "X:/Spirits Rising/Assets/Private"
-git pull origin %BRANCH_NAME%
+git branch -d %BRANCH_NAME%
 if %ERRORLEVEL% neq 0 (
     color %COLOR_FAIL%
-    echo Error pulling from Assets/Private.
+    echo Error deleting local branch "%BRANCH_NAME%" in Assets/Private.
     pause
     color %COLOR_RESET%
-    exit /b 1
+)
+git push origin --delete %BRANCH_NAME%
+if %ERRORLEVEL% neq 0 (
+    color %COLOR_FAIL%
+    echo Error deleting remote branch "%BRANCH_NAME%" in Assets/Private.
+    pause
+    color %COLOR_RESET%
 )
 cd /d "X:/Spirits Rising"
 color %COLOR_LEAVE%
-echo Leaving Assets/Private...
+echo Deleted branch in Assets/Private.
 echo.
 
 REM Main Repo
 color %COLOR_ENTER%
-echo Pulling from Main Repo...
+echo Deleting branch in Main Repo...
 cd /d "X:/Spirits Rising"
-git pull origin %BRANCH_NAME%
+git branch -d %BRANCH_NAME%
 if %ERRORLEVEL% neq 0 (
     color %COLOR_FAIL%
-    echo Error pulling from Main Repo.
+    echo Error deleting local branch "%BRANCH_NAME%" in Main Repo.
     pause
     color %COLOR_RESET%
-    exit /b 1
+)
+git push origin --delete %BRANCH_NAME%
+if %ERRORLEVEL% neq 0 (
+    color %COLOR_FAIL%
+    echo Error deleting remote branch "%BRANCH_NAME%" in Main Repo.
+    pause
+    color %COLOR_RESET%
 )
 color %COLOR_LEAVE%
-echo Leaving Main Repo...
+echo Deleted branch in Main Repo.
 echo.
 
 color %COLOR_SUCCESS%
-echo Pull complete for all repositories.
+echo Branch deletion completed successfully for both local and remote in all repositories.
 echo.
 echo 09 > "X:/Spirits Rising/.gitupdate/.iteratorcheck"
+echo main > "X:/Spirits Rising/.gitupdate/.workingBranch"
 
 color %COLOR_RESET%
 exit /B

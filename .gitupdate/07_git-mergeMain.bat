@@ -15,70 +15,71 @@ set COLOR_FAIL=0C
 REM Load the branch name from the .workingBranch file
 set /p BRANCH_NAME=<"X:/Spirits Rising/.gitupdate/.workingBranch"
 
-REM Check if branch name is empty
+REM Validate branch name
 if "%BRANCH_NAME%"=="" (
+    echo No branch name found in .workingBranch file.
     color %COLOR_FAIL%
-    echo Error: Branch name not found in .workingBranch.
     pause
     color %COLOR_RESET%
     exit /b 1
 )
 
-echo Checking out Main for all submodules...
+echo Merging branch "%BRANCH_NAME%" into main...
 echo.
 
-REM Switch to main branch in Assets/Public
+REM Public Repo
 color %COLOR_ENTER%
-echo Switching to main branch in Assets/Public...
-cd "X:/Spirits Rising/Assets/Public"
-git checkout main
+echo Switching to main in Assets/Public...
+cd /d "X:/Spirits Rising/Assets/Public"
+git merge %BRANCH_NAME%
 if %ERRORLEVEL% neq 0 (
     color %COLOR_FAIL%
-    echo Error switching to main branch in Assets/Public.
+    echo Error merging "%BRANCH_NAME%" in Assets/Public.
     pause
     color %COLOR_RESET%
     exit /b 1
 )
-cd "X:/Spirits Rising"
+cd /d "X:/Spirits Rising"
 color %COLOR_LEAVE%
-echo Switched to main branch in Assets/Public.
+echo Merge complete for Assets/Public.
 echo.
 
-REM Switch to main branch in Assets/Private
+REM Private Repo
 color %COLOR_ENTER%
-echo Switching to main branch in Assets/Private...
-cd "X:/Spirits Rising/Assets/Private"
-git checkout main
+echo Switching to main in Assets/Private...
+cd /d "X:/Spirits Rising/Assets/Private"
+git merge %BRANCH_NAME%
 if %ERRORLEVEL% neq 0 (
     color %COLOR_FAIL%
-    echo Error switching to main branch in Assets/Private.
+    echo Error merging "%BRANCH_NAME%" in Assets/Private.
     pause
     color %COLOR_RESET%
     exit /b 1
 )
-cd "X:/Spirits Rising"
+cd /d "X:/Spirits Rising"
 color %COLOR_LEAVE%
-echo Switched to main branch in Assets/Private.
+echo Merge complete for Assets/Private.
 echo.
 
-REM Switch to main branch in Main Repo
+REM Main Repo
 color %COLOR_ENTER%
-echo Switching to main branch in Main Repo...
-git checkout main
+echo Switching to main in Main Repo...
+cd /d "X:/Spirits Rising"
+echo Merging "%BRANCH_NAME%" into main...
+git merge %BRANCH_NAME%
 if %ERRORLEVEL% neq 0 (
     color %COLOR_FAIL%
-    echo Error switching to main branch in Main Repo.
+    echo Error merging "%BRANCH_NAME%" into main in Main Repo.
     pause
     color %COLOR_RESET%
     exit /b 1
 )
 color %COLOR_LEAVE%
-echo Switched to main branch in Main Repo.
+echo Merge complete for Main Repo.
 echo.
 
-REM Confirmation and iterator check
 color %COLOR_SUCCESS%
-echo All repositories switched back to main branch.
+echo Merge process completed successfully for all repositories.
 echo.
 echo 08 > "X:/Spirits Rising/.gitupdate/.iteratorcheck"
 
