@@ -69,7 +69,7 @@ echo.
 color %COLOR_SUCCESS%
 echo Push process completed successfully for all repositories.
 echo.
-echo 10 > "X:/Spirits Rising/.gitupdate/.iteratorcheck"
+echo 11 > "X:/Spirits Rising/.gitupdate/.iteratorcheck"
 
 color %COLOR_RESET%
 exit /B

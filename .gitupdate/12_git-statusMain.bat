@@ -33,7 +33,7 @@ echo.
 color %COLOR_SUCCESS%
 echo Status check complete.
 echo.
-echo 12 > "X:/Spirits Rising/.gitupdate/.iteratorCheck"
+echo 13 > "X:/Spirits Rising/.gitupdate/.iteratorCheck"
 
 color %COLOR_RESET%
 exit /B

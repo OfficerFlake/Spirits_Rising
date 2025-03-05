@@ -33,7 +33,7 @@ echo.
 color %COLOR_SUCCESS%
 echo Add Sub Modules complete.
 echo.
-echo 11 > "X:/Spirits Rising/.gitupdate/.iteratorCheck"
+echo 12 > "X:/Spirits Rising/.gitupdate/.iteratorCheck"
 
 color %COLOR_RESET%
 exit /B
