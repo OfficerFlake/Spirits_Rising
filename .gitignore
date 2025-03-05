@@ -27,6 +27,10 @@ Logs/
 Packages/
 UserSettings/
 
+# Ignore build directories
+obj/
+bin/
+
 # Ignore anything we specifically flag as wanting to exclude!
 # Useful for things like local testing.
 *.IGNORE.*
