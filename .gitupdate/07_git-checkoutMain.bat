@@ -1,11 +1,13 @@
 @echo off
 cd /d "X:/Spirits Rising/"
 
+REM ===========================================
 REM Color Definitions (Valid Hexadecimal Codes)
+REM ===========================================
 set COLOR_INFO=0F
 set COLOR_ENTER=0E
-set COLOR_LEAVE=0A
-set COLOR_SUCCESS=0B
+set COLOR_LEAVE=0B
+set COLOR_SUCCESS=0A
 set COLOR_RESET=07
 set COLOR_PROMPT=7D
 set COLOR_FAIL=0C
@@ -78,7 +80,7 @@ REM Confirmation and iterator check
 color %COLOR_SUCCESS%
 echo All repositories switched back to main branch.
 echo.
-echo 09 > "X:/Spirits Rising/.gitupdate/.iteratorcheck"
+echo 08 > "X:/Spirits Rising/.gitupdate/.iteratorcheck"
 
 color %COLOR_RESET%
 exit /B

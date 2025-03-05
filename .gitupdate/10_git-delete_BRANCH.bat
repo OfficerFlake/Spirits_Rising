@@ -97,7 +97,7 @@ echo.
 color %COLOR_SUCCESS%
 echo Branch deletion completed successfully for both local and remote in all repositories.
 echo.
-echo 10 > "X:/Spirits Rising/.gitupdate/.iteratorcheck"
+echo 11 > "X:/Spirits Rising/.gitupdate/.iteratorcheck"
 echo main > "X:/Spirits Rising/.gitupdate/.workingBranch"
 
 color %COLOR_RESET%

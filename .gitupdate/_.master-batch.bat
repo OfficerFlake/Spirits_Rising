@@ -209,13 +209,13 @@ echo ====================================
 goto End
 
 :Step07
-echo ============================================
-echo Step 07: Merge branch: %WORKINGBRANCH% to Main
-echo ============================================
-call "X:/Spirits Rising/.gitupdate/07_git-mergeMain.bat"
+echo =================================================
+echo Step 07: Checkout main from branch: %WORKINGBRANCH%
+echo =================================================
+call "X:/Spirits Rising/.gitupdate/07_git-checkoutMain.bat"
 if %ERRORLEVEL% neq 0 (
     color %COLOR_FAIL%
-    echo Error during Step 09. Aborting...
+    echo Error during Step 07. Aborting...
     pause
     exit /B 1
 )
@@ -229,10 +229,10 @@ echo ====================================
 goto End
 
 :Step08
-echo =================================================
-echo Step 08: Checkout main from branch: %WORKINGBRANCH%
-echo =================================================
-call "X:/Spirits Rising/.gitupdate/08_git-checkoutMain.bat"
+echo =======================
+echo Step 08: Pull from Main
+echo =======================
+call "X:/Spirits Rising/.gitupdate/08_git-pullMain.bat"
 if %ERRORLEVEL% neq 0 (
     color %COLOR_FAIL%
     echo Error during Step 08. Aborting...
@@ -241,6 +241,7 @@ if %ERRORLEVEL% neq 0 (
 )
 color %COLOR_LEAVE%
 echo 09 > "X:/Spirits Rising/.gitupdate/.iterator"
+color %COLOR_SUCCESS%
 echo.
 echo ====================================
 echo Step 08 complete, ready for Step 09.
@@ -248,10 +249,10 @@ echo ====================================
 goto End
 
 :Step09
-echo =======================================
-echo Step 09: Delete branch: %WORKINGBRANCH%
-echo =======================================
-call "X:/Spirits Rising/.gitupdate/09_git-delete_BRANCH.bat"
+echo ============================================
+echo Step 09: Marge branch: %WORKINGBRANCH% to Main
+echo ============================================
+call "X:/Spirits Rising/.gitupdate/09_git-mergeMain.bat"
 if %ERRORLEVEL% neq 0 (
     color %COLOR_FAIL%
     echo Error during Step 09. Aborting...
@@ -268,10 +269,10 @@ echo ====================================
 goto End
 
 :Step10
-echo ==================
-echo Step 10: Push main
-echo ==================
-call "X:/Spirits Rising/.gitupdate/10_git-pushMain.bat"
+echo =======================================
+echo Step 10: Delete branch: %WORKINGBRANCH%
+echo =======================================
+call "X:/Spirits Rising/.gitupdate/10_git-delete_BRANCH.bat"
 if %ERRORLEVEL% neq 0 (
     color %COLOR_FAIL%
     echo Error during Step 10. Aborting...
@@ -288,10 +289,10 @@ echo ====================================
 goto End
 
 :Step11
-echo ===============================
-echo Step 11: Add Submodules to Main
-echo ===============================
-call "X:/Spirits Rising/.gitupdate/11_git-addSubModulesToMain.bat"
+echo ==================
+echo Step 11: Push Main
+echo ==================
+call "X:/Spirits Rising/.gitupdate/11_git-pushMain.bat"
 if %ERRORLEVEL% neq 0 (
     color %COLOR_FAIL%
     echo Error during Step 11. Aborting...
@@ -308,10 +309,10 @@ echo ====================================
 goto End
 
 :Step12
-echo =======================================
-echo Step 12: Status Sub Module refs to Main
-echo =======================================
-call "X:/Spirits Rising/.gitupdate/12_git-statusMain.bat"
+echo ===============================
+echo Step 12: Add Submodules to Main
+echo ===============================
+call "X:/Spirits Rising/.gitupdate/12_git-addSubModulesToMain.bat"
 if %ERRORLEVEL% neq 0 (
     color %COLOR_FAIL%
     echo Error during Step 12. Aborting...
@@ -323,18 +324,38 @@ echo 13 > "X:/Spirits Rising/.gitupdate/.iterator"
 color %COLOR_SUCCESS%
 echo.
 echo ====================================
-echo Step 12 Complete, ready for Step 13.
+echo Step 12 complete, ready for Step 13.
 echo ====================================
 goto End
 
 :Step13
-echo =====================================
-echo Step 13: Push Sub Module Refs to Main
-echo =====================================
-call "X:/Spirits Rising/.gitupdate/13_git-pushSubModulesToMain.bat"
+echo =======================================
+echo Step 13: Status Sub Module refs to Main
+echo =======================================
+call "X:/Spirits Rising/.gitupdate/13_git-statusMain.bat"
 if %ERRORLEVEL% neq 0 (
     color %COLOR_FAIL%
     echo Error during Step 13. Aborting...
+    pause
+    exit /B 1
+)
+color %COLOR_LEAVE%
+echo 14 > "X:/Spirits Rising/.gitupdate/.iterator"
+color %COLOR_SUCCESS%
+echo.
+echo ====================================
+echo Step 13 complete, ready for Step 14.
+echo ====================================
+goto End
+
+:Step14
+echo =====================================
+echo Step 14: Push Sub Module Refs to Main
+echo =====================================
+call "X:/Spirits Rising/.gitupdate/14_git-pushSubModulesToMain.bat"
+if %ERRORLEVEL% neq 0 (
+    color %COLOR_FAIL%
+    echo Error during Step 14. Aborting...
     pause
     exit /B 1
 )
@@ -345,7 +366,7 @@ echo.
 echo.
 echo.
 echo =====================================
-echo Step 13 complete   WORKFLOW COMPLETE!
+echo Step 14 complete   WORKFLOW COMPLETE!
 echo =====================================
 echo.
 echo.

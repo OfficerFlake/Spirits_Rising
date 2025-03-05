@@ -12,18 +12,18 @@ set COLOR_RESET=07
 set COLOR_PROMPT=7D
 set COLOR_FAIL=0C
 
-echo Checking Status of Main...
+echo Adding Sub Modules to Main...
 echo.
 
+REM Main repo
 color %COLOR_ENTER%
 echo Entering Main Repo...
 cd /d "X:/Spirits Rising"
-git status
+git add Assets/Public Assets/Private
 if %ERRORLEVEL% neq 0 (
     color %COLOR_FAIL%
-    echo Error occurred while checking submodule status in the Main Repo.
+    echo Error occurred while adding submodules to the Main Repo.
     pause
-    color %COLOR_RESET%
     exit /B 1
 )
 color %COLOR_LEAVE%
@@ -31,7 +31,7 @@ echo Leaving Main Repo...
 echo.
 
 color %COLOR_SUCCESS%
-echo Status check complete.
+echo Add Sub Modules complete.
 echo.
 echo 13 > "X:/Spirits Rising/.gitupdate/.iteratorCheck"
 
