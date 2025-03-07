@@ -30,6 +30,7 @@ UserSettings/
 # Ignore build directories
 obj/
 bin/
+Temp/
 
 # Ignore anything we specifically flag as wanting to exclude!
 # Useful for things like local testing.
