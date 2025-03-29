@@ -154,4 +154,5 @@ echo.
 echo 07 > "X:/Spirits Rising/.gitupdate/.iteratorcheck"
 
 color %COLOR_RESET%
+pause
 exit /B

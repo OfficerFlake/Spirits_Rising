@@ -199,8 +199,49 @@ if %ERRORLEVEL% neq 0 (
     pause
     exit /B 1
 )
+REM Prompt the user for confirmation
+color %COLOR_PROMPT%
+echo Done pushing: %WORKINGBRANCH%.
+echo Would you now like to merge with main (Y) or continue working on this branch(N)?
+set /p user_input=RETURN TO MAIN? (Y/N): 
+
+REM Check the input and act accordingly
+if /i "%user_input%"=="Y" (
+    color %COLOR_ENTER%
+    echo Got it. Will move back to main...
+    echo 07 > "X:/Spirits Rising/.gitupdate/.iterator"
+    echo.
+    echo ====================================
+    echo Step 06 complete, ready for Step 07.
+    echo ====================================
+    goto End
+) else if /i "%user_input%"=="N" (
+    color %COLOR_LEAVE%
+    echo Got it. Will stay on this branch...
+    echo Reverting to Step 04...
+    echo 04 > "X:/Spirits Rising/.gitupdate/.iterator"
+    echo 04 > "X:/Spirits Rising/.gitupdate/.iteratorCheck"
+    echo.
+    echo ==========================================.
+    echo Step 06 incomplete, moving back to Step 04.
+    echo ==========================================.
+    pause
+    exit /B 1
+) else (
+    color %COLOR_ERROR%
+    echo Invalid input. Please launch the script again and chose "Y" if you want to continue!
+    echo Reverting to Step 04...
+    echo 04 > "X:/Spirits Rising/.gitupdate/.iterator"
+    echo 04 > "X:/Spirits Rising/.gitupdate/.iteratorCheck"
+    echo.
+    echo ==========================================.
+    echo Step 06 incomplete, moving back to Step 04.
+    echo ==========================================.
+    pause
+    exit /B 1
+)
+
 color %COLOR_LEAVE%
-echo 07 > "X:/Spirits Rising/.gitupdate/.iterator"
 color %COLOR_SUCCESS%
 echo.
 echo ====================================
