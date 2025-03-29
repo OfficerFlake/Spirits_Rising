@@ -1,0 +1,13 @@
+{
+    "mappings": [
+        {
+            "enumKey": {
+                "enumTypeName": "Modules.Console.Enumerators.ConsoleTypes, Modules.Console.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "enumValueName": "DebugConsole"
+            },
+            "prefab": {
+                "instanceID": 47486
+            }
+        }
+    ]
+}
