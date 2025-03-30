@@ -864,6 +864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: {fileID: 7188503424981189185}
+  CanvasGroup: {fileID: 488117206540389876}
 --- !u!1 &7637333001355757035
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,6 +877,7 @@ GameObject:
   - component: {fileID: 5131722699455352139}
   - component: {fileID: 3842770381151317698}
   - component: {fileID: 4247623660282066742}
+  - component: {fileID: 488117206540389876}
   m_Layer: 5
   m_Name: UnityConsole
   m_TagString: Untagged
@@ -961,11 +963,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
+  m_IgnoreReversedGraphics: 0
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &488117206540389876
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637333001355757035}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8391115330656828417
 GameObject:
   m_ObjectHideFlags: 0
