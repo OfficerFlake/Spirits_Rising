@@ -18,3 +18,4 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       enumValueName: DebugConsole
     prefab: {fileID: 7637333001355757035, guid: 4b700c1a4564237499997778c0dcf6b6, type: 3}
+    prefabHash: 4b700c1a4564237499997778c0dcf6b6
